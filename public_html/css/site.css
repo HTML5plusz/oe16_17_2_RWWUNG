@@ -1,0 +1,105 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017.04.21., 8:23:01
+    Author     : hallgato
+*/
+
+
+.toltokep {
+                background-image: url("../pic/loading.gif");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 150px 99px;
+                height: 35px;
+                width: 35px;
+                display: inline-block;
+                margin: 0px;
+            }
+            button:disabled {
+                color: lightgray;
+            }
+            label {
+                width: 100px;
+                margin-right: 15px;
+            }
+            input[type=text], select {
+                width:200px;
+            }
+
+.sportkep {
+                background-image: url("../pic/HoPS.png");
+                background-size: 150px 150px;
+                background-repeat: no-repeat;
+                background-position: right;
+                height: 150px;
+                width: 250px;
+                display: inline-block;
+                margin-left: 30px;
+                margin-top: 30px;
+            }
+            .sportkep p {
+                text-shadow: 2px 2px #aaaaaa;
+                float: left;
+                vertical-align: middle;
+                font-size: 20px;
+                -webkit-animation: cssAnimation 0.4904s 3 ease;
+-moz-animation: cssAnimation 2s 1 ease;
+-o-animation: cssAnimation 2s 1 ease;
+}
+@-webkit-keyframes cssAnimation {
+from { -webkit-transform: rotate(360deg) scale(1.25) skew(0deg) translate(5px); }
+to { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+from { -moz-transform: rotate(360deg) scale(1.25) skew(-0deg) translate(5px); }
+to { -moz-transform: rotate(0deg) scale(1) skew(-0deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+from { -o-transform: rotate(360deg) scale(1.25) skew(-0deg) translate(5px); }
+to { -o-transform: rotate(0deg) scale(1) skew(-0deg) translate(0px); }
+
+transition:All 1s ease;
+-webkit-transition:All 1s ease;
+-moz-transition:All 1s ease;
+-o-transition:All 1s ease;
+transform: rotate(0deg) scale(0.78) skew(-4deg) translate(-15px);
+-webkit-transform: rotate(0deg) scale(0.78) skew(-4deg) translate(-15px);
+-moz-transform: rotate(0deg) scale(0.78) skew(-4deg) translate(-15px);
+-o-transform: rotate(0deg) scale(0.78) skew(-4deg) translate(-15px);
+-ms-transform: rotate(0deg) scale(0.78) skew(-4deg) translate(-15px);
+}
+
+.sportkep:hover{
+transform: rotate(0deg) scale(1.078) skew(-4deg) translate(-15px);
+-webkit-transform: rotate(0deg) scale(1.078) skew(-4deg) translate(-15px);
+-moz-transform: rotate(0deg) scale(1.078) skew(-4deg) translate(-15px);
+-o-transform: rotate(0deg) scale(1.078) skew(-4deg) translate(-15px);
+-ms-transform: rotate(0deg) scale(1.078) skew(-4deg) translate(-15px);
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: black;
+  color: greenyellow;
+}
+
+.asdf{
+    color: green;
+}
+
+.dractive {
+    background-color: #eaeaea !important;
+}
+
+.dractive:hover {
+    background-color: #dfdfdf !important;
+}

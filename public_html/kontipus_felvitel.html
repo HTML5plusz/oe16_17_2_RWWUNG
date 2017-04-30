@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/angular-cookies.js" type="text/javascript"></script>
+    <link href="css/site.css" rel="stylesheet" type="text/css" />
+    <script src="js/own.js" type="text/javascript"></script>
+    <title>Futam/Mérkőzés felvitele</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body ng-app="humbak" ng-controller="sport.controller">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Kamu Sport Egyesület</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input id="serveraddress" style="width:250px !important" type="text" ng-model="sportmodel.baseurl" class="form-control" placeholder="Szerver címe">
+                    </div>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sport <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sport_felvitel.html">Felvitel</a></li>
+                            <li><a href="sport_listazas.html">Listázás</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="special_felvitel.html">Sport specializáció felvitel</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Szezon <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="szezon_felvitel.html">Felvitel</a></li>
+                            <li><a href="szezon_listazas.html">Listázás</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sorozat <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sorozat_felvitel.html">Felvitel</a></li>
+                            <li><a href="sorozat_listazas.html">Listázás</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bajnokság <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bajnoksag_felvitel.html">Felvitel</a></li>
+                            <li><a href="bajnoksag_listazas.html">Listázás</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="fordulo_felvitel.html">Verseny/Forduló felvitel</a>
+                    </li>
+                    <li>
+                        <a href="jelentkezes_felvitel.html">Jelentkezés felvitel</a>
+                    </li>
+                    <li>
+                        <a href="event_felvitel.html">Sportesemény felvitele</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kondíció <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="kondicio_felvitel.html">Felvitel</a></li>
+                            <li><a href="kondicio_listazas.html">Listázás</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kondíciótípus <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="kontipus_felvitel.html">Felvitel</a></li>
+                            <li><a href="kontipus_listazas.html">Listázás</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <marquee BEHAVIOR="alternate" SCROLLAMOUNT="6" DIRECTION="right">
+        <div class="sportkep">
+            <p>Kamu Sport<br>Egyesület<br><br>Dashboard</p>
+        </div>
+    </marquee>
+    <div class="panel panel-default">
+        <div class="panel-heading">Kondíciótípus felvitele</div>
+        <button ng-click="initializeNewEntity()">Frissítés</button>
+        <div class="toltokep" ng-show="!doneLoading"></div>
+        <div class="panel-body" ng-show="doneLoading && sportmodel.baseurl">
+            <form>
+                <label for="newitem_name">Név:</label>
+                <input id="newitem_name" type="text" ng-model="sportmodel.newEntity.name" /><br>
+                <label for="newitem_description">Leírás:</label>
+                <input id="newitem_description" type="text" ng-model="sportmodel.newEntity.description" /><br>
+                <input type="button" value="Mentés" ng-click="saveEntity()">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
